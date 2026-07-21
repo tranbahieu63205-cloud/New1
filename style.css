@@ -1,0 +1,723 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#000;
+overflow-x:hidden;
+color:#fff;
+
+}
+
+/* =========================
+VIDEO BACKGROUND
+========================= */
+
+#bg-video{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
+
+}
+
+.overlay{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(6px);
+z-index:-2;
+
+}
+
+/* =========================
+LOADER
+========================= */
+
+#loader{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:#000;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+z-index:99999;
+
+animation:loaderHide 3s forwards;
+
+}
+
+#loader h1{
+
+font-size:42px;
+letter-spacing:6px;
+font-weight:700;
+
+}
+
+#loader p{
+
+margin-top:15px;
+opacity:.7;
+
+}
+
+@keyframes loaderHide{
+
+85%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+}
+
+/* =========================
+CARD
+========================= */
+
+.card{
+
+position:absolute;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+width:380px;
+max-width:92%;
+
+padding:35px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.45);
+
+text-align:center;
+
+animation:cardShow .8s;
+
+}
+
+@keyframes cardShow{
+
+from{
+
+opacity:0;
+
+transform:
+translate(-50%,-40%);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translate(-50%,-50%);
+
+}
+
+}
+
+/* =========================
+AVATAR
+========================= */
+
+.avatar{
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid white;
+
+box-shadow:
+
+0 0 15px white,
+
+0 0 35px #00bfff;
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.avatar:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 0 25px white,
+
+0 0 55px cyan;
+
+}
+
+/* =========================
+TEXT
+========================= */
+
+.card h1{
+
+margin-top:18px;
+
+font-size:32px;
+
+}
+
+.verify{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:7px 18px;
+
+border-radius:30px;
+
+background:#1DB954;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.bio{
+
+margin-top:18px;
+
+line-height:28px;
+
+font-size:15px;
+
+color:#ddd;
+
+}
+/* =========================
+SOCIAL BUTTONS
+========================= */
+
+.social{
+
+margin-top:30px;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-size:15px;
+
+font-weight:600;
+
+color:white;
+
+background:rgba(255,255,255,.08);
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 8px 25px rgba(255,255,255,.2);
+
+}
+
+.spotify:hover{
+
+background:#1DB954;
+
+}
+
+.youtube:hover{
+
+background:#FF0000;
+
+}
+
+.facebook:hover{
+
+background:#1877F2;
+
+}
+
+.tiktok:hover{
+
+background:#000;
+
+border:1px solid white;
+
+}
+
+/* =========================
+PLAYER
+========================= */
+
+.player{
+
+margin-top:28px;
+
+display:flex;
+
+align-items:center;
+
+padding:15px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.player:hover{
+
+background:rgba(255,255,255,.12);
+
+}
+
+.player img{
+
+width:75px;
+
+height:75px;
+
+border-radius:15px;
+
+object-fit:cover;
+
+margin-right:15px;
+
+}
+
+.player h3{
+
+font-size:17px;
+
+margin-bottom:6px;
+
+}
+
+.player span{
+
+font-size:13px;
+
+color:#bbb;
+
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery{
+
+margin-top:30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+}
+
+.gallery img{
+
+width:95px;
+
+height:95px;
+
+border-radius:15px;
+
+object-fit:cover;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 15px rgba(255,255,255,.08);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px rgba(255,255,255,.25);
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+margin-top:30px;
+
+font-size:13px;
+
+color:#aaa;
+
+letter-spacing:1px;
+
+}
+/* ===========================
+   PARTICLES
+=========================== */
+
+#particles{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.dot{
+
+position:absolute;
+
+width:5px;
+
+height:5px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.5;
+
+animation:fly linear infinite;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:translateY(100vh) scale(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.6;
+
+}
+
+100%{
+
+transform:translateY(-10vh) scale(1.5);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+CARD HOVER
+=========================== */
+
+.card{
+
+transition:
+
+transform .4s,
+
+box-shadow .4s;
+
+}
+
+.card:hover{
+
+box-shadow:
+
+0 0 25px rgba(255,255,255,.15),
+
+0 0 50px rgba(0,191,255,.25);
+
+}
+
+/* ===========================
+BUTTON EFFECT
+=========================== */
+
+.btn{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transition:.6s;
+
+}
+
+.btn:hover::before{
+
+left:120%;
+
+}
+
+/* ===========================
+GALLERY EFFECT
+=========================== */
+
+.gallery img{
+
+filter:brightness(.9);
+
+}
+
+.gallery img:hover{
+
+filter:brightness(1.1);
+
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#1DB954;
+
+border-radius:30px;
+
+}
+
+/* ===========================
+MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.card{
+
+width:92%;
+
+padding:25px;
+
+}
+
+.avatar{
+
+width:120px;
+
+height:120px;
+
+}
+
+.card h1{
+
+font-size:28px;
+
+}
+
+.bio{
+
+font-size:14px;
+
+line-height:24px;
+
+}
+
+.social{
+
+grid-template-columns:1fr;
+
+}
+
+.player{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.player img{
+
+margin:0 0 15px;
+
+}
+
+.gallery img{
+
+width:80px;
+
+height:80px;
+
+}
+
+}
+
+/* ===========================
+SMALL PHONE
+=========================== */
+
+@media(max-width:420px){
+
+.card{
+
+padding:20px;
+
+}
+
+.card h1{
+
+font-size:24px;
+
+}
+
+.verify{
+
+font-size:12px;
+
+padding:6px 14px;
+
+}
+
+.btn{
+
+padding:12px;
+
+font-size:14px;
+
+}
+
+footer{
+
+font-size:12px;
+
+}
+
+}
